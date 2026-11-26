@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker Challenge</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #222222;
+      background-color: #f4f7f6;
+    }
+
+    header {
+      background-color: #1b4332;
+      color: #ffffff;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+
+    section {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+    }
+
+    h2 {
+      color: #1b4332;
+      margin-top: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    caption {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    th,
+    td {
+      border: 1px solid #cccccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #d8f3dc;
+    }
+
+    fieldset {
+      border: 1px solid #cccccc;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 6px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #bbbbbb;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .share-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .share-row input {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    button {
+      background-color: #2d6a4f;
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #1b4332;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      color: #555555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>30-Day Fitness Tracker Challenge</h1>
+    <p>Track your daily workouts, hydration, and active milestones.</p>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#overview">Challenge Overview</a></li>
+        <li><a href="#schedule">Weekly Schedule</a></li>
+        <li><a href="#log-activity">Log Activity</a></li>
+        <li><a href="#share-repo">Share Repo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="overview">
+      <h2>Challenge Goals</h2>
+      <ul>
+        <li>Complete at least <strong>30 minutes</strong> of daily exercise</li>
+        <li>Drink <em>2.5 liters</em> of water every day</li>
+        <li>Hit <strong>10,000 steps</strong> at least 5 days a week</li>
+      </ul>
+    </section>
+
+    <section id="schedule">
+      <h2>Weekly Workout Schedule</h2>
+      <table>
+        <caption>Sample Week 1 Routine</caption>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Workout Focus</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Target Calories</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Monday</th>
+            <td>Brisk Walk &amp; Jog</td>
+            <td>40 mins</td>
+            <td>320 kcal</td>
+          </tr>
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td>Bodyweight Strength</td>
+            <td>35 mins</td>
+            <td>280 kcal</td>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td>Cycling &amp; Core</td>
+            <td>45 mins</td>
+            <td>400 kcal</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="log-activity">
+      <h2>Log Today's Progress</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Daily Entry</legend>
+
+          <div class="form-group">
+            <label for="participant-name">Participant Name:</label>
+            <input type="text" id="participant-name" name="participant_name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="workout-date">Date:</label>
+            <input type="date" id="workout-date" name="workout_date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="activity-type">Activity Type:</label>
+            <select id="activity-type" name="activity_type">
+              <option value="running">Running / Jogging</option>
+              <option value="cycling">Cycling</option>
+              <option value="strength">Strength Training</option>
+              <option value="yoga">Yoga / Stretching</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="duration">Duration (minutes):</label>
+            <input type="number" id="duration" name="duration" min="5" max="300" required>
+          </div>
+
+          <button type="submit">Save Workout</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="share-repo">
+      <h2>GitHub Repository Link</h2>
+      <div class="share-row">
+        <input type="text" id="repo-url" value="https://github.com/agxmpreet-gif/fitness-challenge-tracker-" readonly>
+        <button type="button" id="copy-btn">Copy Link</button>
+      </div>
+      <p id="copy-status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p><small>&copy; <time datetime="2026">2026</time> Fitness Tracker Challenge | CSE326 Project</small></p>
+  </footer>
+
+  <script>
+    const form = document.querySelector("#log-activity form");
+    const tableBody = document.querySelector("#schedule tbody");
+
+    const activityLabels = {
+      running: "Running / Jogging",
+      cycling: "Cycling",
+      strength: "Strength Training",
+      yoga: "Yoga / Stretching"
+    };
+
+    const caloriesPerMinute = {
+      running: 8,
+      cycling: 7,
+      strength: 6,
+      yoga: 4
+    };
+
+    const statusMessage = document.createElement("p");
+    statusMessage.setAttribute("aria-live", "polite");
+    form.appendChild(statusMessage);
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const participantName = document.getElementById("participant-name").value.trim();
+      const workoutDate = document.getElementById("workout-date").value;
+      const activityValue = document.getElementById("activity-type").value;
+      const duration = Number(document.getElementById("duration").value);
+
+      if (!participantName || !workoutDate || Number.isNaN(duration) || duration < 5) {
+        statusMessage.textContent = "Please enter valid workout details (minimum 5 minutes).";
+        return;
+      }
+
+      const activityText = activityLabels[activityValue] || activityValue;
+      const estimatedCalories = duration * (caloriesPerMinute[activityValue] || 5);
+
+      const row = document.createElement("tr");
+
+      const dayCell = document.createElement("th");
+      dayCell.setAttribute("scope", "row");
+      dayCell.textContent = workoutDate;
+
+      const focusCell = document.createElement("td");
+      focusCell.textContent = `${activityText} (${participantName})`;
+
+      const durationCell = document.createElement("td");
+      durationCell.textContent = `${duration} mins`;
+
+      const caloriesCell = document.createElement("td");
+      caloriesCell.textContent = `${estimatedCalories} kcal`;
+
+      row.append(dayCell, focusCell, durationCell, caloriesCell);
+      tableBody.appendChild(row);
+
+      statusMessage.textContent = `Logged ${duration} mins of ${activityText} for ${participantName}.`;
+      form.reset();
+    });
+
+    const copyBtn = document.getElementById("copy-btn");
+    const repoInput = document.getElementById("repo-url");
+    const copyStatus = document.getElementById("copy-status");
+
+    copyBtn.addEventListener("click", async function () {
+      try {
+        await navigator.clipboard.writeText(repoInput.value);
+        copyStatus.textContent = "Copied to clipboard!";
+      } catch (err) {
+        repoInput.select();
+        document.execCommand("copy");
+        copyStatus.textContent = "Copied!";
+      }
+    });
+  </script>
+</body>
+</html>
